@@ -134,11 +134,3 @@ text
 Special thanks to the Raspberry Pi Foundation for the hardware platform and to the open-source community providing excellent Python libraries enabling this project.
 
 ---
-
-## License
-
-Specify your license here (e.g., MIT License).
-
----
-
-*For questions or collaboration opportunities, contact [Your Contact Info].*
