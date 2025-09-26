@@ -1,0 +1,11 @@
+#libraries needed 
+picamera
+opencv-python
+numpy
+matplotlib
+Pillow
+gpsd-py3
+
+#how to use this stupid ass code file, i mean it could go wrong but lets try it once i guess
+# run this command on raspberry pi to install all dependencies 
+#pip3 install -r requirements.txt
