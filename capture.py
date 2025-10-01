@@ -1,5 +1,5 @@
 import os
-from picamera import PiCamera
+from picamera2 import Picamera2, Preview
 from time import sleep
 from datetime import datetime
 
@@ -19,27 +19,22 @@ def capture_image():
     filename = f"sand_{timestamp}.jpg"
     save_path = os.path.join(DATA_FOLDER, filename)
 
-    camera = PiCamera()
-    camera.resolution = (1920, 1080)  # HD quality
-    camera.framerate = 15
+    camera = Picamera2()
+    camera_config = camera.create_preview_configuration({"size":(1920, 1080)})
+    capture_config = picam2.create_still_configuration({"size": (1920, 1080)})
+    camera.configure(camera_config)
+    picam2.configure(capture_config)
 
-    # Camera enhancement settings
-    camera.exposure_mode = 'auto'
-    camera.shutter_speed = 0
-    camera.iso = 100
-    camera.awb_mode = 'auto'
-
-    camera.start_preview()
-    sleep(2)  # Allow camera to adjust lighting
+    camera.start_preview(Preview.QTGL)
+    camera.start()
+    sleep(2)
 
     # Take multiple pictures to let camera adjust and capture stable frame
-    for i in range(3):
-        camera.capture(f"{DATA_FOLDER}/temp_{i}.jpg")
-        sleep(0.5)
+    '''for i in range(3):
+        camera.capture_file(f"{DATA_FOLDER}/temp_{i}.jpg")
+        sleep(0.5)'''
 
-    camera.capture(save_path)
-    camera.stop_preview()
-    camera.close()
+    camera.capture_file(save_path)
 
     print(f"Image saved at: {save_path}")
     return save_path, timestamp
