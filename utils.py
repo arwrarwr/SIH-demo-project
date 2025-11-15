@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def calibrate_pixel_to_mm(image_path=None, marker_mm=10.0):
+def calibrate_pixel_to_mm(image_path=None, marker_mm=24.0):
     """
     Manual scale calibration: user should photograph a known marker (e.g., 10mm coin)
     Returns mm_per_pixel or None if calibration image not provided.
