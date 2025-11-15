@@ -1,37 +1,24 @@
-now the code includes modular scripts for image capture, sand grain analysis, scale calibration, beach classification, and GPS (placeholder) 
---- should be enough for SIH problem statement 
-further work would be of hardware integration and testing. 
-it should start working, i made changes to almost all the files, including capture.py, to makee some directory changes, but if somehow the code breaks. 
-feel free to edit it to get the hardware working. 
+### demo-video-code
 
+this is just some modifications made to the duh branch, what are those
+changes, can't remember for the life of me, prolly some bug fixes and
+adjustments.
+This code has the scale (mm/pixel) hardcoded, which the user should be
+prompted to enter
 
-capture.py
-    Ensures the data folder exists before saving images.
-    Captures images from the camera with error checks.
-    Saves images with timestamped filenames.
-    Returns the image path and capture time.
+---
 
-analyze.py
-    Loads grayscale image and improves contrast.
-    Removes noise and segments sand grains.
-    Finds contours and filters small noise.
-    Calculates grain areas in pixels (and mm² if calibrated).
-    Shows original and segmented images side-by-side.
-    Returns grain size statistics.
+### stuff-left
 
-classify.py
-    Classifies beach type (fine, medium, coarse sand) based on grain size statistics in mm².
-    Handles uncalibrated cases by returning “Unknown”.
-gps_module.py
-    Placeholder for GPS functionality.
-    Returns None for coordinates until hardware is integrated.
+- gps-stuff
+- heat map of sand size distribution at the beach (also needs gps)
+- web-app
+- also a db for storing sand data
+- automating the hardware, so the user can just use this just like a camera
+- anything else??
 
-utils.py
-    Handles pixel-to-millimeter conversion based on calibration image.
-    Requests manual input of the size of a known reference object in pixels.
+still have a lot of parts to fulfill. i guess.
 
-main.py
-    Manages workflow: calibration, image capture, analysis, classification, and saving results.
-    Reads GPS data if available, else sets it to None.
-    Saves all data and metadata in a JSON file for traceability.
- my part ? done i guess. 
+---
+
+>"A stone is heavy and the sand is weighty; but a fool's wrath is heavier than them both."
