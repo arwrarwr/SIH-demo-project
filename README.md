@@ -27,6 +27,7 @@ these changes were mostly for demo purposes, except for the picamera2 module inc
 - also a db for storing sand data
 - scale calculation program
 - automating the hardware, so the user can just use this like a camera
+- adding the option to use images from your software
 - anything else??
 
 still have a lot of parts to fulfill. i guess.
