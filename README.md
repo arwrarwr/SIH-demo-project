@@ -19,6 +19,19 @@ these changes were mostly for demo purposes, except for the picamera2 module inc
 
 ---
 
+### automation
+
+the script is now automated, that is connect the raspberry pi to a push button as shown below:
+
+<img width="699" height="783" alt="ckt-diagram" src="https://github.com/user-attachments/assets/7319483f-635f-4d4b-88ba-5861e8c3bb0c" />
+
+and run the automation script
+```bash
+python automate.py
+```
+and press the push button to run the entire scirpt.<br/>
+still need the automate scirpt to start at boot
+
 ### stuff-left
 
 - gps-stuff
